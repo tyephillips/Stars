@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looping Digital Lilies</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+        }
+
+        .center-text {
+            position: absolute;
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: center;
+            white-space: pre-line;
+            line-height: 1.5;
+            max-width: 80%;
+            overflow: hidden;
+        }
+
+        .flower {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: none;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            background: linear-gradient(135deg, white, pink);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+            animation: float 8s linear infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) scale(0.5);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) scale(1.2);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="center-text">
+        Dear Danica, 
+
+        Loving you has felt like the easiest thing I've ever done. 
+        Loving you feels as easy as blinking, but only because you make it that way. 
+
+        You are the most hilarious, outspoken, clever, goofiest (in the best way possible), caring, supportive, confident, intelligent, funnest, and the most beautiful girl I have ever met—and will ever meet. You honestly make me want to be a better man every second of the day, not only for myself but for you too, because you deserve nothing but the best. I'm willing to do everything possible to make sure you get that.
+
+        I know loving me or even just being with me may feel hard or frustrating at times, but seeing you stay with me makes me fall in love with you even more every single day. From the time I actually got to know you, I could see myself spending the rest of my life with you, and I genuinely wouldn't want it any other way.
+
+        Speaking to you feels euphoric, each moment we spend together feels like a dream, and when I'm away from you, I feel nostalgic. It's safe to say I am the luckiest man alive to have a woman like you by my side. 
+
+        You give me the confidence to take on challenges and try things in ways I never thought I could before. Writing this didn't take any thought because it's how I genuinely feel every day. 
+
+        I can't wait to spend the rest of my life with you. 
+
+        I love you,  
+        From Tye.
+    </div>
+
+    <script>
+        // Generate looping digital lilies
+        const flowerCount = 110; // Number of flowers
+        const body = document.body;
+
+        for (let i = 0; i < flowerCount; i++) {
+            const flower = document.createElement('div');
+            flower.classList.add('flower');
+
+            // Randomize position, size, and animation duration
+            flower.style.left = `${Math.random() * 100}vw`;
+            flower.style.animationDuration = `${Math.random() * 5 + 5}s`;
+            flower.style.width = `${Math.random() * 30 + 20}px`;
+            flower.style.height = flower.style.width;
+
+            body.appendChild(flower);
+        }
+    </script>
+</body>
+</html>
+
